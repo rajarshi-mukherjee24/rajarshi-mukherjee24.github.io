@@ -4,6 +4,7 @@ table#tlayout {
     border: none;
     border-collapse: separate;
     background: white;
+    width: 100%;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
         font-family: Georgia, serif;
         padding-bottom: 8px;
         margin: 0;
+        box-sizing: border-box;
 }
 
 #layout-menu {
@@ -294,6 +296,162 @@ span.error {
 }
 span.comment, span.comment > *, span.string, span.string > * {
         color: #606060;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    table#tlayout {
+        display: block;
+        width: 100%;
+    }
+
+    table#tlayout tr {
+        display: block;
+        width: 100%;
+    }
+
+    table#tlayout td {
+        display: block;
+        width: 100% !important;
+        padding: 0 !important;
+        border: none !important;
+        text-align: left !important;
+    }
+
+    #layout-menu {
+        background: #f6f6f6;
+        border: 1px solid #000000;
+        border-bottom: none;
+        padding: 0.5em 8px;
+        font-size: 0.95em;
+        white-space: normal;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .menu-category {
+        width: 100%;
+        border-bottom: 1px solid gray;
+        margin: 0.4em 0;
+        padding: 0.2em 0;
+        font-weight: bold;
+    }
+
+    .menu-item {
+        padding: 0;
+        text-indent: 0;
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    #layout-content {
+        padding: 1em 0.5em;
+        border: 1px solid #000000;
+        border-top: none;
+    }
+
+    body {
+        padding-bottom: 4px;
+    }
+
+    h1, h2, h3 {
+        font-size: 90% !important;
+        margin-top: 0.6em;
+        margin-bottom: 0.3em;
+        padding-bottom: 0.2em;
+        padding-top: 0.8em;
+    }
+
+    h1 {
+        font-size: 140% !important;
+    }
+
+    h2 {
+        font-size: 110% !important;
+    }
+
+    p {
+        font-size: 0.95em;
+        margin-bottom: 0.6em;
+        line-height: 1.4;
+    }
+
+    ul, ol {
+        margin-left: 1em;
+        padding-left: 1.2em;
+    }
+
+    li {
+        margin-bottom: 0.3em;
+    }
+
+    a {
+        word-break: break-word;
+    }
+
+    pre, tt {
+        font-size: 85%;
+        overflow-x: auto;
+    }
+
+    div.blockcontent {
+        padding: 0.3em 0.3em;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    td {
+        word-break: break-word;
+    }
+
+    #toptitle {
+        padding-bottom: 0.2em;
+        margin-bottom: 1em;
+    }
+
+    #subtitle {
+        font-size: 0.9em;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 120% !important;
+    }
+
+    h2 {
+        font-size: 100% !important;
+    }
+
+    p, li {
+        font-size: 0.9em;
+    }
+
+    #layout-menu {
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+    .menu-item {
+        display: block;
+        margin-right: 0;
+        padding: 0.3em 0;
+    }
+
+    #layout-content {
+        padding: 0.8em 0.4em;
+    }
+
+    ul, ol {
+        margin-left: 0.8em;
+        padding-left: 1em;
+    }
 }
 
 @media print {
